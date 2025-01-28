@@ -9,6 +9,14 @@ A customizable and lightweight CLI progress bar for Node.js, with support for dy
 - **Flexible Length**: Control the length of the progress bar.
 - **Real-time Updates**: Easily update the progress bar during long-running tasks.
 
+## Installation
+
+To install `trackster` run the following command:
+
+```bash
+npm install trackster
+```
+
 ## Usage
 Once installed, you can import and use the progress bar in your project.
   
