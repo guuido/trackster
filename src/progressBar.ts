@@ -1,4 +1,4 @@
-import { ProgressBarConfig } from "../types/progressBar";
+import { ProgressBarConfig } from "./progressBar.types";
 import { parseFillChar, parseFillColor } from "./utils";
 
 export function createProgressBar(

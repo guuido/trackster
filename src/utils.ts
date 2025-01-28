@@ -1,4 +1,4 @@
-import { FillChar, FillColor } from "../types/progressBar";
+import { FillChar, FillColor } from "./progressBar.types";
 
 export function parseFillChar (fillChar: FillChar): string {
     switch(fillChar){

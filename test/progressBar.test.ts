@@ -1,6 +1,6 @@
 import { createProgressBar } from "../src/index";
 import { parseFillChar, parseFillColor } from "../src/utils";
-import { FillChar, FillColor, ProgressBarConfig } from "../types/progressBar";
+import { FillChar, FillColor, ProgressBarConfig } from "../src/progressBar.types";
 
 jest.mock('process', () => ({
     stdout: {

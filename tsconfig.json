@@ -2,6 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",
+    "moduleResolution": "node",
     "declaration": true,
     "target": "es2016",                                  
     "module": "commonjs",                               
@@ -11,8 +12,7 @@
     "skipLibCheck": true                     
   },
   "include": [
-    "src/**/*.ts",
-    "types/**/*.d.ts"                                        
+    "src/**/*.ts"                                   
   ],
   "exclude": [
     "node_modules", 
