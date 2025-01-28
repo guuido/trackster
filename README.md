@@ -1,5 +1,9 @@
 # Trackster
 
+[![npm version](https://img.shields.io/npm/v/trackster)](https://www.npmjs.com/package/trackster)
+[![npm license](https://img.shields.io/npm/l/trackster)](https://www.npmjs.com/package/trackster)
+![npm size](https://img.shields.io/npm/unpacked-size/trackster)
+
 A customizable and lightweight CLI progress bar for Node.js, with support for dynamic colors, fill characters and progress updates.
 
 ## Features
