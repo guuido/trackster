@@ -29,10 +29,11 @@ Once installed, you can import and use the progress bar in your project.
 import { createProgressBar } from 'trackster';
 
 const config = {
-  fillChar: 'hash', // default is 'hash'
+  fillChar: 'hash', // optional, default is 'hash'
   color: 'green',   // optional, default is no color
   length: 50,       // optional, default is 100
-  showBounds: true  // optional, default is true
+  showBounds: true,  // optional, default is true
+  textMode: 'percentage'  // optional, default is 'none'
 };
 
 const progressBar = createProgressBar(100, config);
@@ -85,3 +86,10 @@ progressBar.completeProgressBar();
 - `emptyChar`: The character used to represent the empty space in the progress bar.
 
   **Default**: `' '` (space)
+
+- `textMode`: Controls the display of progress text. Options include:
+  - `none`: no text displayed
+  - `count`: shows progress as "n/m" (e.g. 5/10)
+  - `percentage`: shows progress as percentage (e.g. 50%)
+
+  **Default**: `none`
