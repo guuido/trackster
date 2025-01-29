@@ -1,5 +1,5 @@
 import { ProgressBarConfig } from "./progressBar.types";
-import { parseFillChar, parseFillColor } from "./utils";
+import { generateProgressText, parseFillChar, parseFillColor } from "./utils";
 
 export function createProgressBar(
   total: number,
@@ -28,7 +28,9 @@ export function createProgressBar(
 
     const bar = `${start}${colorPrefix}${filled}${empty}${colorSuffix}${end}`;
 
-    process.stdout.write(`\r${bar}`);
+    const text = `${config.textMode ? ' ' + generateProgressText(completed,total,config.textMode) : ''}`;
+
+    process.stdout.write(`\r${bar}${text}`);
   }
 
   function completeProgressBar() {

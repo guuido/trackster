@@ -1,4 +1,4 @@
-import { FillChar, FillColor } from "./progressBar.types";
+import { FillChar, FillColor, TextMode } from "./progressBar.types";
 
 export function parseFillChar (fillChar: FillChar): string {
     switch(fillChar){
@@ -47,5 +47,19 @@ export function parseFillColor (fillColor: FillColor): string {
             return '\x1b[31m';
         default:
             return '\x1b[30m';
+    }
+}
+
+export function generateProgressText (completed: number, total: number, mode: TextMode): string {
+    switch(mode){
+        case 'none':
+            return '';
+        case 'count':
+            return `${completed}/${total}`;
+        case 'percentage':
+            if(completed == 0 && total == 0) return '0%';
+            return `${Math.round((completed/total)*100)}%`;
+        default:
+            return '';
     }
 }

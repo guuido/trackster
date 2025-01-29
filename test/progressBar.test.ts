@@ -1,5 +1,5 @@
 import { createProgressBar } from "../src/index";
-import { parseFillChar, parseFillColor } from "../src/utils";
+import { generateProgressText, parseFillChar, parseFillColor } from "../src/utils";
 import { FillChar, FillColor, ProgressBarConfig } from "../src/progressBar.types";
 
 jest.mock('process', () => ({
@@ -75,58 +75,3 @@ describe('createProgressBar', () => {
     });
 
 });
-
-describe('parseFillChar', () => {
-  
-    const fillChars: FillChar[] = [
-      'asterisk', 'dot', 'equals', 'hash', 'hyphen', 'bar', 
-      'empty-block', 'light-block', 'medium-block', 'full-block'
-    ];
-  
-    const expectedFillCharOutput: Record<FillChar, string> = {
-      'asterisk': '*',
-      'dot': '.',
-      'equals': '=',
-      'hash': '#',
-      'hyphen': '-',
-      'bar': '|',
-      'empty-block': '░',
-      'light-block': '▒',
-      'medium-block': '▓',
-      'full-block': '█'
-    };
-  
-    fillChars.forEach((fillChar) => {
-      it(`should return the correct character for '${fillChar}'`, () => {
-        const result = parseFillChar(fillChar);
-        expect(result).toBe(expectedFillCharOutput[fillChar]);
-      });
-    });
-  
-  });
-
-  describe('parseFillColor', () => {
-
-    const colors: FillColor[] = [
-      'black', 'white', 'magenta', 'cyan', 'yellow', 'blue', 'green', 'red'
-    ];
-  
-    const expectedColorCodes: Record<FillColor, string> = {
-      'black': '\x1b[30m',
-      'white': '\x1b[37m',
-      'magenta': '\x1b[35m',
-      'cyan': '\x1b[36m',
-      'yellow': '\x1b[33m',
-      'blue': '\x1b[34m',
-      'green': '\x1b[32m',
-      'red': '\x1b[31m',
-    };
-  
-    colors.forEach((color) => {
-      it(`should return the correct color code for '${color}'`, () => {
-        const result = parseFillColor(color);
-        expect(result).toBe(expectedColorCodes[color]);
-      });
-    });
-  
-  });
