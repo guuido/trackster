@@ -1,5 +1,5 @@
 export interface ProgressBarConfig {
-    fillChar: FillChar;
+    fillChar?: FillChar;
     emptyChar?: string;
     color?: FillColor;
     length?: number;

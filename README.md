@@ -29,7 +29,7 @@ Once installed, you can import and use the progress bar in your project.
 import { createProgressBar } from 'trackster';
 
 const config = {
-  fillChar: 'hash', // default is 'hash'
+  fillChar: 'hash', // optional, default is 'hash'
   color: 'green',   // optional, default is no color
   length: 50,       // optional, default is 100
   showBounds: true,  // optional, default is true
